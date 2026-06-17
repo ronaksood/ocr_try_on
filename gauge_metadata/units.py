@@ -1,47 +1,30 @@
 from typing import Optional
 
-# Ordered longest-first to prevent substring false positives.
-# e.g. "mbar" must be checked before "bar", "kPa" before "Pa".
-UNIT_VOCABULARY: tuple[str, ...] = (
-    "kgf/cm²",
-    "kgf/cm2",
-    "kg/cm²",
-    "kg/cm2",
-    "mmh2o",
-    "inh2o",
-    "l/min",
-    "mbar",
-    "mmwc",
-    "mmhg",
-    "inhg",
-    "khz",
-    "lpm",
-    "gpm",
-    "rpm",
-    "kpa",
-    "mpa",
-    "psi",
-    "vac",
-    "bar",
-    "pa",
-    "°c",
-    "°f",
-    "ma",
-    "hz",
-    "%",
-    "v",
-    "a",
-)
+# Set-based vocabulary for O(1) exact word matching.
+# No longer needs longest-match-first ordering because we match
+# whole word tokens, not substrings.
+UNIT_VOCABULARY: frozenset[str] = frozenset({
+    "bar", "mbar", "psi", "kpa", "mpa", "pa",
+    "kg/cm2", "kg/cm²", "kgf/cm2", "kgf/cm²",
+    "mmwc", "mmh2o", "inh2o", "mmhg", "inhg",
+    "vac", "%", "°c", "°f",
+    "v", "ma", "a", "hz", "khz",
+    "rpm", "lpm", "l/min", "gpm",
+})
+
+_STRIP_CHARS = "'\"~,;:!?_.})]>#@"
 
 
 def match_unit(texts: list[str]) -> Optional[str]:
     """Match OCR-detected text against the engineering unit vocabulary.
 
-    Returns the first matched unit (in its canonical lowercase form) or None.
+    Splits each text into word tokens and checks for exact matches,
+    preventing false positives from substring matching (e.g. 'a' inside 'WKAU').
     """
     for text in texts:
-        normalized = text.strip().lower()
-        for unit in UNIT_VOCABULARY:
-            if unit in normalized:
-                return unit
+        tokens = text.strip().lower().split()
+        for token in tokens:
+            cleaned = token.strip(_STRIP_CHARS)
+            if cleaned in UNIT_VOCABULARY:
+                return cleaned
     return None

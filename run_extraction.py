@@ -9,6 +9,7 @@ from gauge_metadata import extract_gauge_metadata
 from gauge_metadata.ocr import OcrReader
 
 IMAGE_DIR = Path(__file__).parent / "data" / "clean"
+OUTPUT_FILE = Path(__file__).parent / "results.json"
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".tiff"}
 
 
@@ -47,6 +48,10 @@ def main() -> None:
             logger.exception("Failed to process %s", image_path.name)
             results.append({"file": image_path.name, "error": "processing_failed"})
 
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+
+    logger.info("Results saved to %s", OUTPUT_FILE)
     print(json.dumps(results, indent=2, ensure_ascii=False))
 
 
