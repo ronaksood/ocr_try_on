@@ -1,16 +1,18 @@
 from dataclasses import dataclass, field
-from typing import Optional
 
 
 @dataclass
 class GaugeMetadata:
-    unit: Optional[str] = None
-    min_value: Optional[float] = None
-    max_value: Optional[float] = None
+    """Data contract representing the extracted gauge metadata."""
+
+    unit: str | None = None
+    min_value: float | None = None
+    max_value: float | None = None
     all_detected_text: list[str] = field(default_factory=list)
     all_detected_numbers: list[float] = field(default_factory=list)
 
     def to_dict(self) -> dict:
+        """Serialize metadata instance to a dictionary."""
         return {
             "unit": self.unit,
             "min_value": self.min_value,

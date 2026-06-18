@@ -5,10 +5,10 @@ import easyocr
 logger = logging.getLogger(__name__)
 
 
-class OcrReader:
-    """Thin wrapper around EasyOCR for gauge image text extraction."""
+class OcrService:
+    """Service wrapper around EasyOCR for gauge image text extraction."""
 
-    def __init__(self, languages: list[str] | None = None):
+    def __init__(self, languages: list[str] | None = None) -> None:
         langs = languages or ["en"]
         logger.info("Initializing EasyOCR reader with languages: %s", langs)
         self._reader = easyocr.Reader(langs, verbose=False)
@@ -19,3 +19,4 @@ class OcrReader:
         texts = [entry[1] for entry in results if entry[1]]
         logger.debug("OCR detected %d text regions in %s", len(texts), image_path)
         return texts
+

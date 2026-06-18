@@ -8,7 +8,6 @@ _TRAILING_ARTIFACTS = set("'\"~,;:!?_})]>#@-")
 _ALLOWED_NUMERIC_CHARS = set("0123456789.- ")
 
 # Gauge scale values almost never exceed 4 digits.
-# Serial numbers, EN standards (13190), model numbers are typically 5+ digits.
 _MAX_GAUGE_VALUE = 10_000
 
 
@@ -25,9 +24,7 @@ def _clean_text(text: str) -> str:
 def _is_numeric_text(text: str) -> bool:
     """Check if OCR text is a clean numeric entry with no embedded letters.
 
-    Rejects entries like 'EN 13190', '62544HO', 'CL 1.0', 'i1b06JS9'
-    where numbers are mixed with text — these are serial numbers, standards,
-    or OCR garbage, not gauge scale markings.
+    Rejects entries like 'EN 13190', '62544HO', 'CL 1.0', 'i1b06JS9'.
     """
     cleaned = _clean_text(text)
     if not cleaned:
@@ -36,11 +33,7 @@ def _is_numeric_text(text: str) -> bool:
 
 
 def _filter_outliers(numbers: list[float]) -> list[float]:
-    """Remove statistical outliers using IQR method.
-
-    Catches remaining noise values (e.g. model numbers like 4175) that pass
-    the clean-text filter and magnitude cap but are far outside the scale cluster.
-    """
+    """Remove statistical outliers using IQR method."""
     if len(numbers) < 4:
         return numbers
     quantile_points = statistics.quantiles(numbers, n=4)
@@ -76,3 +69,27 @@ def extract_numbers(texts: list[str]) -> list[float]:
                 continue
     numbers = sorted(set(numbers))
     return _filter_outliers(numbers)
+
+
+def infer_zero(numbers: list[float]) -> list[float]:
+    """Infer a missing 0 starting value for gauge scales.
+
+    Gauge scales are arithmetic progressions (0, 10, 20, ...).
+    OCR commonly misses the '0' marking near the dial edge.
+    If the smallest detected value equals the step size of the
+    sequence, 0 was very likely missed.
+    """
+    if len(numbers) < 3 or 0.0 in numbers or numbers[0] <= 0:
+        return numbers
+
+    diffs = [numbers[i + 1] - numbers[i] for i in range(len(numbers) - 1)]
+    positive_diffs = sorted(d for d in diffs if d > 0)
+    if not positive_diffs:
+        return numbers
+
+    step = positive_diffs[len(positive_diffs) // 2]  # median
+
+    if step > 0 and abs(numbers[0] - step) / step <= 0.15:
+        return [0.0] + numbers
+
+    return numbers

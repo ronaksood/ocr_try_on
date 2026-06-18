@@ -5,11 +5,17 @@ import logging
 import sys
 from pathlib import Path
 
-from gauge_metadata import extract_gauge_metadata
-from gauge_metadata.ocr import OcrReader
+# Add project root to sys.path if run directly as a script
+project_root = Path(__file__).resolve().parent.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
 
-IMAGE_DIR = Path(__file__).parent / "data" / "clean"
-OUTPUT_FILE = Path(__file__).parent / "results.json"
+from gauge_metadata.services.metadata_extractor_service import MetadataExtractorService
+from gauge_metadata.services.ocr_service import OcrService
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+IMAGE_DIR = PROJECT_ROOT / "data" / "clean"
+OUTPUT_FILE = PROJECT_ROOT / "results.json"
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".tiff"}
 
 
@@ -25,8 +31,7 @@ def main() -> None:
         sys.exit(1)
 
     image_files = sorted(
-        f for f in IMAGE_DIR.iterdir()
-        if f.suffix.lower() in IMAGE_EXTENSIONS
+        f for f in IMAGE_DIR.iterdir() if f.suffix.lower() in IMAGE_EXTENSIONS
     )
 
     if not image_files:
@@ -35,18 +40,21 @@ def main() -> None:
 
     logger.info("Found %d images in %s", len(image_files), IMAGE_DIR)
 
-    ocr_reader = OcrReader()
+    ocr_service = OcrService()
+    extractor_service = MetadataExtractorService(ocr_service=ocr_service)
 
     results: list[dict] = []
     for image_path in image_files:
         logger.info("Processing: %s", image_path.name)
         try:
-            metadata = extract_gauge_metadata(str(image_path), ocr_reader)
+            metadata = extractor_service.extract_metadata(str(image_path))
             result = {"file": image_path.name, **metadata.to_dict()}
             results.append(result)
         except Exception:
             logger.exception("Failed to process %s", image_path.name)
-            results.append({"file": image_path.name, "error": "processing_failed"})
+            results.append(
+                {"file": image_path.name, "error": "processing_failed"}
+            )
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)

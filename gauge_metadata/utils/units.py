@@ -1,13 +1,33 @@
-from typing import Optional
-
 # Set-based vocabulary for O(1) exact word matching.
 UNIT_VOCABULARY: frozenset[str] = frozenset({
-    "bar", "mbar", "psi", "kpa", "mpa", "pa",
-    "kg/cm2", "kg/cm²", "kgf/cm2", "kgf/cm²",
-    "mmwc", "mmh2o", "inh2o", "mmhg", "inhg",
-    "vac", "%", "°c", "°f",
-    "v", "ma", "a", "hz", "khz",
-    "rpm", "lpm", "l/min", "gpm",
+    "bar",
+    "mbar",
+    "psi",
+    "kpa",
+    "mpa",
+    "pa",
+    "kg/cm2",
+    "kg/cm²",
+    "kgf/cm2",
+    "kgf/cm²",
+    "mmwc",
+    "mmh2o",
+    "inh2o",
+    "mmhg",
+    "inhg",
+    "vac",
+    "%",
+    "°c",
+    "°f",
+    "v",
+    "ma",
+    "a",
+    "hz",
+    "khz",
+    "rpm",
+    "lpm",
+    "l/min",
+    "gpm",
 })
 
 # Only strip punctuation that realistically appears as OCR artifact
@@ -16,7 +36,7 @@ UNIT_VOCABULARY: frozenset[str] = frozenset({
 _STRIP_CHARS = ",.;:!?\""
 
 
-def match_unit(texts: list[str]) -> Optional[str]:
+def match_unit(texts: list[str]) -> str | None:
     """Match OCR-detected text against the engineering unit vocabulary.
 
     Splits each text into word tokens and checks for exact matches,

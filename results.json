@@ -1,0 +1,552 @@
+[
+  {
+    "file": "000027_jpg.rf.4176b6a1e45b5384646beb611579089f.jpg",
+    "unit": "psi",
+    "min_value": 5.0,
+    "max_value": 15.0,
+    "all_detected_text": [
+      "WARNER",
+      "5",
+      "Eu",
+      "15",
+      "FUEL",
+      "PSI",
+      "ISTEWART",
+      "826748"
+    ],
+    "all_detected_numbers": [
+      5.0,
+      15.0
+    ]
+  },
+  {
+    "file": "1- 11-00 14HTM11CP501-2_jpg.rf.4ERYPufd7ok358BAChLK.jpg",
+    "unit": "bar",
+    "min_value": null,
+    "max_value": null,
+    "all_detected_text": [
+      "MDVEMENT",
+      "EN 837",
+      "3",
+      "bar",
+      "CL 1.0",
+      "11/16",
+      "WKA",
+      "Bulelsp",
+      "swiss "
+    ],
+    "all_detected_numbers": [
+      3.0
+    ]
+  },
+  {
+    "file": "1- 13-00 - 14HTD21CP501-2_jpg.rf.WbM0rtosCrRJFzeOLiQu.jpg",
+    "unit": "bar",
+    "min_value": 3.0,
+    "max_value": 4.0,
+    "all_detected_text": [
+      "FIL; FLU@",
+      "Ptfetetteo pars",
+      "3",
+      "IEL",
+      "4",
+      "bar",
+      "49403701",
+      "'BUCHANAN",
+      "Olasgow UA]",
+      "8t2ea84"
+    ],
+    "all_detected_numbers": [
+      3.0,
+      4.0
+    ]
+  },
+  {
+    "file": "1- 14-00 - 14HCB02CT001-2_jpg.rf.515dMqc8Ws45STP75KQl.jpg",
+    "unit": null,
+    "min_value": 0.0,
+    "max_value": 800.0,
+    "all_detected_text": [
+      "400",
+      "500",
+      "EN 13190",
+      "200",
+      "66250mo",
+      "600\"",
+      "100",
+      "700-",
+      "0",
+      "800",
+      "\"c",
+      "Baumer",
+      "KI 1"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      100.0,
+      200.0,
+      400.0,
+      500.0,
+      600.0,
+      700.0,
+      800.0
+    ]
+  },
+  {
+    "file": "10- 13-00 - 14HTC12CT502-1_jpg.rf.BIxpQjC3OGvi8yCuXGNr.jpg",
+    "unit": null,
+    "min_value": 0.0,
+    "max_value": 60.0,
+    "all_detected_text": [
+      "30",
+      "40",
+      "20",
+      "EN",
+      "50",
+      "10",
+      "60_",
+      "GAS",
+      "CLI",
+      "13190'",
+      "SYSTEM",
+      "WKAU ",
+      "inpauJS@"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0
+    ]
+  },
+  {
+    "file": "10- 13-00 - 14HTC12CT502-1_jpg.rf.ISqF7ZncpKMY4DKgvcek.jpg",
+    "unit": null,
+    "min_value": 0.0,
+    "max_value": 60.0,
+    "all_detected_text": [
+      "30",
+      "20",
+      "EN",
+      "40",
+      "50",
+      "10",
+      "60",
+      "0",
+      "CLI",
+      "13190'",
+      "SYSTEM",
+      "CAS =",
+      "WKAU",
+      "i1b06JS9"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0
+    ]
+  },
+  {
+    "file": "10- 13-00 - 14MAJ12CP501-1_jpg.rf.KvAFytZFpdbRquEoRiuI.jpg",
+    "unit": "bar",
+    "min_value": 0.2,
+    "max_value": 4.0,
+    "all_detected_text": [
+      "0.6",
+      "04",
+      "PRESSURE GAV",
+      "0.8",
+      "0.2",
+      "bar",
+      "Huaa"
+    ],
+    "all_detected_numbers": [
+      0.2,
+      0.6,
+      0.8,
+      4.0
+    ]
+  },
+  {
+    "file": "170_jpg.rf.f2f22c69692593459de9dd2a0b568ea3.jpg",
+    "unit": "psi",
+    "min_value": 0.0,
+    "max_value": 60.0,
+    "all_detected_text": [
+      "25 30 35",
+      "20",
+      "40",
+      "15",
+      "45",
+      "50",
+      "5",
+      "55",
+      "60",
+      "psi"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      5.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      35.0,
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0
+    ]
+  },
+  {
+    "file": "2- 13-00 - 14HTC11CT503-1_jpg.rf.X0MxIamnZZhdOTfTkbRq.jpg",
+    "unit": null,
+    "min_value": 0.0,
+    "max_value": 60.0,
+    "all_detected_text": [
+      "30",
+      "20",
+      "EN 1319/",
+      "40",
+      "10",
+      "50",
+      "A0",
+      "'",
+      "60",
+      "GAS",
+      "39",
+      "ClI",
+      "SYSTEM",
+      "WKA",
+      "T1DBJJSA",
+      "49"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      39.0,
+      40.0,
+      49.0,
+      50.0,
+      60.0
+    ]
+  },
+  {
+    "file": "2-10-00-14HCB04CT001-2-jpg-5dhbmb9v-ingestion-585c5dcfbb-qz9dm_jpg.rf.YMl4Ojy2TFSNlsTt0b7U.jpg",
+    "unit": null,
+    "min_value": 0.0,
+    "max_value": 800.0,
+    "all_detected_text": [
+      "400",
+      "380",
+      "500",
+      "EN 13190",
+      "'200",
+      "62544HO",
+      "600",
+      "'100",
+      "700",
+      "800",
+      "Baumer"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      100.0,
+      200.0,
+      380.0,
+      400.0,
+      500.0,
+      600.0,
+      700.0,
+      800.0
+    ]
+  },
+  {
+    "file": "225_PNG_jpg.rf.OTTMaL9lm1NcD2sDIcpC.jpg",
+    "unit": null,
+    "min_value": 60.0,
+    "max_value": 80.0,
+    "all_detected_text": [
+      "60",
+      "'80"
+    ],
+    "all_detected_numbers": [
+      60.0,
+      80.0
+    ]
+  },
+  {
+    "file": "IMG_5906_JPG_jpg.rf.OMrHCNTaKrHKTMm2C1HH.jpg",
+    "unit": null,
+    "min_value": 0.2,
+    "max_value": 4.0,
+    "all_detected_text": [
+      "04",
+      "0.6",
+      "Fhr",
+      "0.2"
+    ],
+    "all_detected_numbers": [
+      0.2,
+      0.6,
+      4.0
+    ]
+  },
+  {
+    "file": "Oil-Pressure-Gauge-A2C53413310-S__39334-1563979529_jpg.rf.D9GypfYMF9rD5ZH7DVrg.jpg",
+    "unit": "psi",
+    "min_value": 0.0,
+    "max_value": 100.0,
+    "all_detected_text": [
+      "20",
+      "40",
+      "60",
+      "80",
+      "100",
+      "psi bar",
+      "VDO"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      20.0,
+      40.0,
+      60.0,
+      80.0,
+      100.0
+    ]
+  },
+  {
+    "file": "istockphoto-1323074940-1024x1024-jpg-5dhbrdid-ingestion-585c5dcfbb-ltlqg_jpg.rf.FoPcHfKr0pPIINKx4sOl.jpg",
+    "unit": "%",
+    "min_value": 0.0,
+    "max_value": 100.0,
+    "all_detected_text": [
+      "40",
+      "50",
+      "30",
+      "60",
+      "20",
+      "70",
+      "10",
+      "80",
+      "90",
+      "HUMIDITY",
+      "100",
+      "%",
+      "DRY",
+      ")"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0,
+      70.0,
+      80.0,
+      90.0,
+      100.0
+    ]
+  },
+  {
+    "file": "istockphoto-1460718388-612x612_jpg.rf.mLyiPu4xEMwo6vWK3EgQ.jpg",
+    "unit": "bar",
+    "min_value": null,
+    "max_value": null,
+    "all_detected_text": [
+      "5",
+      "bar"
+    ],
+    "all_detected_numbers": [
+      5.0
+    ]
+  },
+  {
+    "file": "istockphoto-186200242-612x612_jpg.rf.ltXw30WHrI1IxIx86wrU.jpg",
+    "unit": null,
+    "min_value": 2.0,
+    "max_value": 9001.0,
+    "all_detected_text": [
+      "2",
+      "Uuge 51",
+      "6 _",
+      "9001",
+      "kejcm?",
+      "pressure",
+      "Lbjin\""
+    ],
+    "all_detected_numbers": [
+      2.0,
+      6.0,
+      9001.0
+    ]
+  },
+  {
+    "file": "pressureGauge_14_jpg.rf.xcEPW4tOTkHfEm2gB4cK.jpg",
+    "unit": "mbar",
+    "min_value": 0.0,
+    "max_value": 400.0,
+    "all_detected_text": [
+      "400",
+      "200",
+      "300",
+      "'100",
+      "mbar"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0
+    ]
+  },
+  {
+    "file": "pressureGauge_324_jpg.rf.j1iX3J5d9fdrRjBi5v9S.jpg",
+    "unit": null,
+    "min_value": null,
+    "max_value": null,
+    "all_detected_text": [],
+    "all_detected_numbers": []
+  },
+  {
+    "file": "pressureGauge_340_jpg.rf.bONpnvF45MAIN6nzj15R.jpg",
+    "unit": "psi",
+    "min_value": 8.0,
+    "max_value": 460.0,
+    "all_detected_text": [
+      "8O",
+      "1po",
+      "8",
+      "#a",
+      "psi",
+      "Cl25",
+      "460",
+      "dudluull",
+      "YATO J"
+    ],
+    "all_detected_numbers": [
+      8.0,
+      460.0
+    ]
+  },
+  {
+    "file": "pressureGauge_38_jpg.rf.LHDG7UoSNRTg4xPpaxUD.jpg",
+    "unit": null,
+    "min_value": 50.0,
+    "max_value": 400.0,
+    "all_detected_text": [
+      "200",
+      "400",
+      "50",
+      "b/in'",
+      "~250 F",
+      "300 ,",
+      "kg/cm?"
+    ],
+    "all_detected_numbers": [
+      50.0,
+      200.0,
+      300.0,
+      400.0
+    ]
+  },
+  {
+    "file": "pressureGauge_419_jpg.rf.gCHYGGvW7aTu7Qwxp7aC.jpg",
+    "unit": "bar",
+    "min_value": null,
+    "max_value": null,
+    "all_detected_text": [
+      "Do",
+      "710",
+      "bar",
+      "KI1,6",
+      "837-j",
+      "ILD"
+    ],
+    "all_detected_numbers": [
+      710.0
+    ]
+  },
+  {
+    "file": "pressureGauge_53_jpg.rf.MahAkc8TKMrCw1IcDaRV.jpg",
+    "unit": "bar",
+    "min_value": 12.0,
+    "max_value": 220.0,
+    "all_detected_text": [
+      "125",
+      "150",
+      "75",
+      "12",
+      "50 ",
+      "'200",
+      "25",
+      "bar",
+      "pSi",
+      "1100",
+      "4175",
+      "Suixen:",
+      "220,"
+    ],
+    "all_detected_numbers": [
+      12.0,
+      25.0,
+      50.0,
+      75.0,
+      125.0,
+      150.0,
+      200.0,
+      220.0
+    ]
+  },
+  {
+    "file": "pressureGauge_82_jpg.rf.p2RVqKSsFlF8OofX4p9z.jpg",
+    "unit": "bar",
+    "min_value": 6.0,
+    "max_value": 10.0,
+    "all_detected_text": [
+      "6",
+      "En0jt-|",
+      "8",
+      "bar",
+      "10",
+      "KLL,0",
+      "Muku"
+    ],
+    "all_detected_numbers": [
+      6.0,
+      8.0,
+      10.0
+    ]
+  },
+  {
+    "file": "pressureGauge_87_jpg.rf.5N5V3aU3VdgIkEPSo2Qd.jpg",
+    "unit": null,
+    "min_value": 0.0,
+    "max_value": 150.0,
+    "all_detected_text": [
+      "100",
+      "50",
+      "150",
+      "00 }"
+    ],
+    "all_detected_numbers": [
+      0.0,
+      50.0,
+      100.0,
+      150.0
+    ]
+  }
+]
