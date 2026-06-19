@@ -1,22 +1,27 @@
-from dataclasses import dataclass, field
+from pydantic import BaseModel, Field
 
 
-@dataclass
-class GaugeMetadata:
-    """Data contract representing the extracted gauge metadata."""
+class GaugeMetadataResponse(BaseModel):
+    """Pydantic model representing the extracted gauge metadata."""
 
-    unit: str | None = None
-    min_value: float | None = None
-    max_value: float | None = None
-    all_detected_text: list[str] = field(default_factory=list)
-    all_detected_numbers: list[float] = field(default_factory=list)
+    unit: str | None = Field(
+        default=None,
+        description="The detected engineering unit of the gauge (e.g., 'bar', 'psi').",
+    )
+    min_value: float | None = Field(
+        default=None,
+        description="The minimum scale value of the gauge.",
+    )
+    max_value: float | None = Field(
+        default=None,
+        description="The maximum scale value of the gauge.",
+    )
 
-    def to_dict(self) -> dict:
-        """Serialize metadata instance to a dictionary."""
-        return {
-            "unit": self.unit,
-            "min_value": self.min_value,
-            "max_value": self.max_value,
-            "all_detected_text": self.all_detected_text,
-            "all_detected_numbers": self.all_detected_numbers,
-        }
+
+class HealthResponse(BaseModel):
+    """Pydantic model representing the health check response."""
+
+    status: str = Field(
+        default="healthy",
+        description="Status of the module.",
+    )

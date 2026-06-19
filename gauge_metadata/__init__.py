@@ -1,9 +1,11 @@
-from gauge_metadata.schemas.metadata import GaugeMetadata
-from gauge_metadata.services.metadata_extractor_service import MetadataExtractorService
+from gauge_metadata.main import app
+from gauge_metadata.orchestrator import Orchestrator
+from gauge_metadata.router import router
 from gauge_metadata.services.ocr_service import OcrService
 
 __all__ = [
-    "GaugeMetadata",
-    "MetadataExtractorService",
+    "app",
+    "router",
+    "Orchestrator",
     "OcrService",
 ]
